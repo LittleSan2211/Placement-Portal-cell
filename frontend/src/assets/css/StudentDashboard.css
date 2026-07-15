@@ -1,0 +1,258 @@
+/* ==================================================================
+   MASTER SHELL LAYOUT WRAPPER
+   ================================================================== */
+.db-master-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Sleek Slate Light Background */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================================================================
+   PART 1: FIXED SIDEBAR NAVIGATION (Width: 260px)
+   ================================================================== */
+.db-sidebar-pane {
+  width: 260px;
+  background: #0f172a; /* Deep Slate Blue Dark Theme */
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 4px 0 10px rgba(15, 23, 42, 0.05);
+  padding: 24px 16px;
+}
+
+/* Corporate Brand/Logo Area */
+.db-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px 24px 12px;
+  border-bottom: 1px solid #1e293b;
+  margin-bottom: 24px;
+}
+
+.db-brand-section i {
+  font-size: 24px;
+  color: #3b82f6; /* Electric Blue Accent */
+}
+
+.db-brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+/* Vertical Menu List */
+.db-menu-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Navigation Links Style */
+.db-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  color: #94a3b8; /* Soft Muted Text */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.db-menu-item:hover {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Active Class Injector Route */
+.db-item-active {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.db-menu-item i {
+  font-size: 16px;
+}
+
+.db-sidebar-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This forces footer to the absolute bottom */
+}
+
+/* Sidebar Utilities Footer Wrapper */
+.db-sidebar-footer-utils {
+  margin-top: auto; /* Solid push guard */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+}
+
+.db-divider-line {
+  height: 1px;
+  background: #1e293b;
+  margin: 12px 0;
+}
+
+/* Showcase Buttons Styles (Settings & Support) */
+.db-util-btn-showcase {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  color: #64748b; /* More muted than links because it's showcase only */
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: not-allowed; /* Gives indication it's visual right now */
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.db-util-btn-showcase:hover {
+  color: #94a3b8;
+}
+
+/* Real Working Logout Button Style */
+.db-util-btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: #f87171; /* Soft Crimson Coral Red alert tint */
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.db-util-btn-logout:hover {
+  background: rgba(239, 68, 68, 0.1); /* Soft transparent red glow */
+  color: #ef4444;
+}
+
+.db-util-btn-logout i,
+.db-util-btn-showcase i {
+  font-size: 16px;
+}
+
+/* ==================================================================
+   PART 2: MAIN WRAPPER CONTENT REGION (Offset Left: 260px)
+   ================================================================== */
+.db-content-core-pane {
+  flex: 1;
+  margin-left: 260px; /* Sidebar space buffer */
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Global Horizon Top Bar Layout */
+.db-top-header-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+/* Greeting Text Block */
+.db-user-greet {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.db-highlight-name {
+  color: #3b82f6; /* Dynamic focus colour name mapping */
+}
+
+.db-context-subtext {
+  font-size: 12px;
+  color: #64748b;
+  margin: 4px 0 0 0;
+  font-weight: 500;
+}
+
+/* Profile Initials Circle Badge */
+.db-header-profile-badge {
+  display: flex;
+  align-items: center;
+}
+
+.db-avatar-circle {
+  width: 40px;
+  height: 40px;
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 2px 4px rgba(37, 99, 219, 0.06);
+}
+
+/* ==================================================================
+   DYNAMIC VIEWPORT WORKSPACE
+   ================================================================== */
+.db-view-render-container {
+  padding: 32px;
+  flex: 1;
+  background-color: #f8fafc;
+}
+
+/* Responsive adjustments for mid-screens */
+@media (max-width: 992px) {
+  .db-sidebar-pane {
+    width: 80px;
+    padding: 24px 8px;
+  }
+  .db-brand-text {
+    display: none;
+  }
+  .db-brand-section {
+    justify-content: center;
+    padding: 0 0 16px 0;
+  }
+  .db-menu-item span {
+    display: none;
+  }
+  .db-menu-item {
+    justify-content: center;
+    padding: 12px;
+  }
+  .db-content-core-pane {
+    margin-left: 80px;
+  }
+}

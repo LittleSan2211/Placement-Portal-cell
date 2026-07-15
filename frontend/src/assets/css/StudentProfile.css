@@ -1,0 +1,268 @@
+/* ==================================================================
+   🔥 CANDIDATE PORTAL CORE PROFILE CANVAS (MAIN WRAPPER)
+   ================================================================== */
+.stu-prof-container {
+  padding: 40px; /* Sidebar aur screen edges se neat institutional separation */
+  background-color: #f8fafc; /* Safe smooth desktop theme canvas tint */
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+}
+
+/* HEADER MANAGEMENT ZONE */
+.stu-prof-header-zone {
+  text-align: left;
+  margin-bottom: 28px;
+  padding-left: 4px;
+}
+
+.stu-prof-header-zone h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.stu-prof-header-zone p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ==================================================================
+   🔥 THE RIGID ROW GRID SPLIT (Forcing Side-by-Side Locked View)
+   ================================================================== */
+.stu-prof-grid-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 24px; /* Cards ke beech ka sateek symmetric separation gap */
+  width: 100%;
+  align-items: start; /* Dono cards top level se barabar rahenge */
+  box-sizing: border-box;
+}
+
+/* LEFT CARD ELEMENT CONTAINER BLOCK */
+.stu-prof-grid-layout > .stu-prof-card-block:first-of-type {
+  flex: 1.1; /* Credentials card gets slightly more room area */
+  min-width: 0; /* Prevents layout from running away or blowing width bounds */
+}
+
+/* RIGHT CARD ELEMENT CONTAINER BLOCK */
+.stu-prof-grid-layout > .stu-prof-card-block:last-of-type {
+  flex: 0.9; /* Resume and stack card stays sharp and clean */
+  min-width: 0;
+}
+
+/* ==================================================================
+   UNIFIED SOFTWARE ENTERPRISE CARD CONTAINER
+   ================================================================== */
+.stu-prof-card-block {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px; /* Uniform breathing cushion inner padding */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02),
+    0 2px 4px -1px rgba(15, 23, 42, 0.01);
+  box-sizing: border-box;
+}
+
+.stu-prof-card-block h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* FLEXIBLE COLUMN COMPACT ROWS */
+.stu-prof-row-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.stu-prof-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stu-prof-input-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #475569;
+  text-align: left;
+}
+
+/* PREMIUM UNIFIED DATA INPUT FIELDS */
+.stu-prof-input-group input,
+.stu-prof-input-group select,
+.stu-prof-input-group textarea {
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.stu-prof-input-group input:focus,
+.stu-prof-input-group select:focus,
+.stu-prof-input-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ==================================================================
+   DRAG-DROP AND FILE INPUT DESIGN
+   ================================================================== */
+.stu-prof-upload-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stu-prof-upload-zone label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #475569;
+  text-align: left;
+}
+
+.stu-prof-file-input-wrapper {
+  border: 2px dashed #cbd5e1;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stu-prof-file-input-wrapper:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.stu-prof-file-input-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.stu-prof-file-input-wrapper i {
+  font-size: 32px;
+  color: #94a3b8;
+}
+
+.stu-prof-file-input-wrapper p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 8px 0 0 0;
+}
+
+/* WARNING AND EXISTENCE RESUME BADGES */
+.stu-prof-resume-badge-status {
+  margin-top: 10px;
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #92400e;
+}
+
+.stu-prof-resume-badge-status a {
+  font-weight: 600;
+  color: #b45309;
+  text-decoration: none;
+}
+
+.stu-prof-resume-badge-status a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================================
+   ACTION CONTROLLERS & ALERT NOTIFICATIONS
+   ================================================================== */
+.stu-prof-save-btn {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 13px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+  transition: background-color 0.15s ease;
+}
+
+.stu-prof-save-btn:hover {
+  background: #1d4ed8;
+}
+
+.stu-prof-save-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* TOAST PANELS FEEDBACK */
+.stu-prof-success-toast {
+  font-size: 13px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stu-prof-error-toast {
+  font-size: 13px;
+  background: #fef2f2;
+  border: 1px solid #fecaa7;
+  color: #991b1b;
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ROTATION SPIN LOADER */
+.stu-prof-spin {
+  animation: stuSpin 1s linear infinite;
+} 
+
+@keyframes stuSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

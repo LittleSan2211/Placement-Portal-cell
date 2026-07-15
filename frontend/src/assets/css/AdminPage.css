@@ -1,0 +1,455 @@
+/* ==========================================================================
+   MAIN CONTENT WRAPPER (.ad)
+   ========================================================================== */
+.ad {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 8px;
+  background-color: #f8fafc; /* Milky White Variant */
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   UPPER TITLE PANEL (.ad-upper, .adu-left, .adu-right)
+   ========================================================================== */
+.ad-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adu-left h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3a8a; /* Deep Navy Blue */
+  margin: 0;
+}
+
+.adu-left p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 4px 0 0 0;
+}
+
+.adu-right {
+  display: flex;
+  gap: 12px;
+}
+
+.adu-right button,
+.adu-right div p {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.adu-right button {
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.adu-right button:hover {
+  background-color: #f0f5ff;
+  border-color: #2563eb;
+}
+
+.adu-right div p {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+}
+
+.adu-right div p:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   ROW 1 LAYOUT: METRIC CARDS GRID (.ad-middle) & TOP PARTNERS (.trp)
+   ========================================================================== */
+/* Parde ke peeche dono ko ek line mein laane ke liye hum target karte hain */
+.ad-middle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 Columns mesh to maintain height */
+  gap: 16px;
+  width: 65%; /* Grid ko 65% space diya */
+  float: left;
+}
+
+.trp {
+  width: 32%; /* Top partners ko side me 32% space diya */
+  float: right;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* CSS hack to clear floats and make them align perfectly */
+.ad::after,
+.dashboard-top-row-clear {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Hack to wrap them inside a flex behavior without adding HTML wrappers */
+@media (min-width: 992px) {
+  .ad {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* We handle structural wrapping via pseudo elements or re-ordering if needed, 
+       but standard floats/flex on direct children is safest: */
+  .ad-middle {
+    display: grid;
+    width: auto;
+    grid-column: 1;
+    margin-right: 360px;
+  }
+  .trp {
+    position: absolute;
+    right: 24px;
+    width: 320px;
+    height: 396px;
+    margin-top: 102px;
+  }
+}
+
+/* ==========================================================================
+   METRIC CARDS STYLING (.adm-card, .card-top-row, .card-icon-box, .trend-tag)
+   ========================================================================== */
+.adm-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+  transition: all 0.25s ease;
+}
+
+.adm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.05);
+  border-color: #bfdbfe;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.student-icon {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+.company-icon {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+.drive-icon {
+  background-color: #fff7ed;
+  color: #f97316;
+}
+.rate-icon {
+  background-color: #f5f3ff;
+  color: #8b5cf6;
+}
+.blacklist-icon {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+.pending-icon {
+  background-color: #fff1f2;
+  color: #f43f5e;
+}
+
+.trend-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+.green-tag {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+.red-tag {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+.orange-tag {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+.blue-tag {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.adm-card > span:nth-of-type(1),
+.card-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.3px;
+}
+
+.adm-card > span:nth-of-type(2),
+.card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 4px 0;
+}
+
+.adm-card > p,
+.card-sub {
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ==========================================================================
+   TOP RECRUITING PARTNERS CARD INTERNAL STYLES (.trp, .partner-list, .partner-card)
+   ========================================================================== */
+.trp h3 {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.partner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.partner-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.partner-card:hover {
+  border-color: #bfdbfe;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.partner-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rank-badge {
+  font-weight: 700;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.company-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.company-details h4 {
+  margin: 0;
+  font-size: 13px;
+  color: #1e293b;
+  font-weight: 600;
+}
+.company-details p {
+  margin: 1px 0 0 0;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.package-badge {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.partner-right p {
+  margin: 1px 0 0 0;
+  font-size: 10px;
+  color: #94a3b8;
+  text-align: right;
+}
+.no-data {
+  text-align: center;
+  color: #94a3b8;
+  padding: 16px;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   ROW 2 LAYOUT: COMPACT TABLE (.adm-table) & RECENT ACTIVITY CARD (.adl-upper)
+   ========================================================================== */
+@media (min-width: 992px) {
+  /* Table area layout shrinking */
+  .adm-table {
+    margin-right: 360px; /* Right column space matching the layout above */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  /* Transforming the Recent Activity block area dynamically into a side widget card */
+  .adl-upper {
+    position: absolute;
+    right: 24px;
+    width: 320px;
+    margin-top: 530px; /* Placed exactly under Top Partners card */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+  }
+}
+
+/* ==================================================================
+   🔥 UNIFIED & ALIGNED RECENT REQUESTS TABLE
+   ================================================================== */
+.adm-table {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.adm-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left; /* 🔥 Strict left alignment for all headers and rows */
+}
+
+/* TABLE HEADERS MATCH */
+.adm-table th {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569; /* Elegant charcoal grey headers */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 16px;
+  border-bottom: 2px solid #edf2f7;
+}
+
+/* TABLE ROWS CELLS MATCH (No more text running away!) */
+.adm-table td {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b; /* Readable dark grey font text */
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+/* HOVER FEEDBACK ROW MATRIX */
+.adm-table tbody tr:hover {
+  background-color: #f8fafc; /* Dynamic smooth highlight row on hover */
+  transition: background-color 0.15s ease;
+}
+
+/* If you want to explicitly freeze widths to avoid any layout running away */
+.adm-table th:nth-child(1),
+.adm-table td:nth-child(1) {
+  width: 30%;
+} /* Company Name column */
+.adm-table th:nth-child(2),
+.adm-table td:nth-child(2) {
+  width: 25%;
+} /* Industry column */
+.adm-table th:nth-child(3),
+.adm-table td:nth-child(3) {
+  width: 25%;
+} /* Location column */
+.adm-table th:nth-child(4),
+.adm-table td:nth-child(4) {
+  width: 20%;
+} /* Time column */
+.time-col {
+  color: #2563eb;
+  font-weight: 500;
+}
+.no-data-td {
+  text-align: center;
+  color: #94a3b8;
+  padding: 16px !important;
+}
+
+/* Custom internal style injection for Recent Activity card look */
+.adl-upper h3 {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+/* This creates an automatic visual box for later updates without touching HTML structure */
+.adl-upper::after {
+  content: "Activity log widget space reserved for later mapping.";
+  display: block;
+  border: 2px dashed #cbd5e1;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  padding: 24px 12px;
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 12px;
+}

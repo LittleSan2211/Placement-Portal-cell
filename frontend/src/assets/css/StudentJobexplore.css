@@ -1,0 +1,499 @@
+/* ==================================================================
+   CORE MASTER WORKSPACE
+   ================================================================== */
+.je-workspace-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: calc(100vh - 120px);
+}
+
+/* ==================================================================
+   TOP PANEL: CONTROL DECK (SEARCH & FILTERS)
+   ================================================================== */
+.je-control-deck {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  padding: 16px 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.je-search-box-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.je-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.je-search-input {
+  width: 100%;
+  padding: 10px 16px 10px 42px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.je-search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.je-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.je-filter-dropdown {
+  padding: 10px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Dynamic Inline Error Tag */
+.je-inline-error-badge {
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: jeShake 0.3s ease-in-out;
+}
+
+/* ==================================================================
+   BOTTOM LAYOUT: THE 65-35 SPLIT WINDOW
+   ================================================================== */
+.je-split-workspace {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* LEFT WORKSPACE STREAM (65%) */
+.je-left-stream-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.je-job-summary-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.je-job-summary-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.je-active-selected-card {
+  border-color: #2563eb !important;
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+}
+
+.je-card-top-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.je-card-company {
+  color: #64748b;
+  text-transform: uppercase;
+}
+.je-card-package {
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.je-card-role-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.je-card-meta-loc {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.je-card-type-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+.je-bg-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.je-bg-purple {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* Status Indicators */
+.je-status-tag-applied {
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 700;
+}
+.je-status-tag-ineligible {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 700;
+}
+.je-status-tag-open {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* RIGHT WORKSPACE DETAIL PANE (35%) */
+.je-right-details-pane {
+  overflow: hidden;
+}
+
+.je-sticky-detail-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+}
+
+.je-detail-header {
+  padding: 24px 24px 16px 24px;
+}
+.je-detail-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+.je-detail-company-sub {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 8px 0;
+}
+.je-detail-location-sub {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.je-divider-line {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 0;
+}
+
+.je-detail-scroll-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.je-detail-section h5 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.03em;
+}
+.je-text-muted {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.je-detail-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.je-detail-skill-pill {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.je-perks-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.je-perks-text {
+  margin-top: 6px;
+  color: #475569;
+}
+.je-perks-text i {
+  color: #eab308;
+}
+
+.je-eligibility-summary-box ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.je-deadline-alert-bar {
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  color: #c2410c;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.je-applied-on-badge {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  color: #15803d;
+  padding: 10px 14px;
+  border-radius: 10px; 
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* BOTTOM ACTION BUTTONS */
+.je-detail-action-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+.je-btn-action {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.je-btn-trigger-apply {
+  background: #2563eb;
+  color: #ffffff;
+}
+.je-btn-trigger-apply:hover {
+  background: #1d4ed8;
+}
+.je-btn-applied {
+  background: #dcfce7;
+  color: #15803d;
+  cursor: not-allowed;
+}
+.je-btn-locked {
+  background: #fee2e2;
+  color: #991b1b;
+  cursor: not-allowed;
+}
+
+/* EMPTY VIEW PLACEHOLDER */
+.je-detail-empty-placeholder {
+  height: 100%;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+.je-placeholder-icon {
+  font-size: 42px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+.je-detail-empty-placeholder h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  margin: 0 0 6px 0;
+}
+.je-detail-empty-placeholder p {
+  font-size: 13px;
+  color: #94a3b8;
+  max-width: 280px;
+  margin: 0;
+  line-height: 1.4;
+}
+.je-no-results-box {
+  text-align: center;
+  color: #94a3b8;
+  padding: 60px 20px;
+  font-size: 14px;
+}
+
+/* ==================================================================
+   🔥 SUCCESS POP-UP MODAL OVERLAY
+   ================================================================== */
+.je-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.je-success-modal-box {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: jePop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.je-modal-icon-ring {
+  width: 56px;
+  height: 56px;
+  background: #dcfce7;
+  color: #16a34a;
+  border-radius: 100px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+}
+
+.je-success-modal-box h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+.je-success-modal-box p {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+.je-btn-modal-close {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.je-btn-modal-close:hover {
+  background: #1e293b;
+}
+
+/* SCROLLBAR CUSTOMIZATION */
+.je-left-stream-pane::-webkit-scrollbar,
+.je-detail-scroll-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.je-left-stream-pane::-webkit-scrollbar-thumb,
+.je-detail-scroll-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes jePop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes jeShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-4px);
+  }
+  40%,
+  80% {
+    transform: translateX(4px);
+  }
+}

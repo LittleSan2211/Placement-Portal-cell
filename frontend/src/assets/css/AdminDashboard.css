@@ -1,0 +1,225 @@
+.admin {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fb; /* Natural light grey-blue backdrop */
+    font-family: "Inter", sans-serif;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+.lun {
+    width: 257px;
+    min-height: 100vh;
+    background-color: white;
+    border-right: 1px solid #e5e7eb;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.lu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 28px 22px;
+    box-sizing: border-box;
+}
+
+/* Upper branding group */
+.lun-upper {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.lun-upper h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+.lun-upper p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/* Middle Layout Area */
+.lun-middle {
+    margin-top: 40px;
+    flex: 1;
+}
+
+.lun-middle ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.lun-middle ul li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+/* 🎯 UNIFORM LINK STRUCTURE (Har clickable element ko same framework de diya) */
+.link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563; /* Premium balanced dark grey for light mode text */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent; 
+    box-sizing: border-box;
+}
+
+.link i {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.link span {
+    margin-left: 10px;
+}
+
+/* Hover dynamic state across all options */
+.link:hover {
+    background-color: #eef2ff;
+    color: #4f46e5;
+    transform: translateX(4px);
+}
+
+/* ACTIVE TABS GRAPHICS (Exact match with your image color state) */
+.link.router-link-exact-active,
+.link.router-link-active:not([href="#"]):not(.text-link) {
+    background: linear-gradient(135deg, #4f46e5, #2563eb) !important; /* Perfect natural blue fill */
+    color: #ffffff !important;
+    border-left: 4px solid #4f46e5;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+    font-weight: 600;
+}
+
+/* 📥 BOTTOM NAVIGATION SECTION FIXED (Aligns seamlessly with upper tags) */
+.lun-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Clean tracking distribution space */
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+/* Support and Settings now behave exactly like middle dashboard slots */
+.lun-bottom .link:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+/* Logout interaction rule specifications */
+.logout-clickable-btn {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-clickable-btn:hover {
+    background-color: #fef2f2 !important; 
+    color: #dc2626 !important; /* Crimson sharp warn look */
+}
+
+/* ================= TOP NAVBAR ================= */
+.lut {
+    position: fixed;
+    top: 0;
+    left: 257px;
+    right: 0;
+    height: 65px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    z-index: 100;
+}
+
+.lut-img {
+    display: flex;
+    gap: 10px;
+}
+
+.lut-img p {
+    margin-top: 26px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    background: #1e3a8a;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lut-img img {
+    height: 48px;
+    width: 80px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.lut-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lutr-left {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #eef2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.lutr-right {
+    margin-left: 40px;
+}
+
+.lutr-right h3 {
+    font-size: 13.5px;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.lutr-right p {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.lutr-am img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+}
+
+/* ================= ROUTER VIEW SPACE ================= */
+.admin > div:last-child {
+    margin-left: 257px;
+    margin-top: 80px;
+    width: calc(100% - 257px);
+    padding: 35px;
+    box-sizing: border-box;
+}
