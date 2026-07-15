@@ -7,7 +7,7 @@ from models import JobPosition, Student, db, Application
 from extension import cache
 
 bp = Blueprint('student', __name__)
-
+ 
 def make_user_cache_key(*args, **kwargs):
     try:
         user_id = get_jwt_identity()
