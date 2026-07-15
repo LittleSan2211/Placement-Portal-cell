@@ -10,7 +10,7 @@ def export_applicants_csv_task(company_id):
     print(f"[Celery] Starting CSV export for Company ID: {company_id}")
     # Local runtime context map to avoid circular load
     from run import app
-    with app.app_context():
+    with app.app_context(): 
         export_dir = os.path.join(os.getcwd(), 'static', 'exports')
         os.makedirs(export_dir, exist_ok=True)
 

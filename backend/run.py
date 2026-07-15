@@ -5,7 +5,7 @@ from flask import Flask
 from flask_jwt_extended import JWTManager 
 from datetime import timedelta
 from flask_cors import CORS
-from celery.schedules import crontab
+from celery.schedules import crontab 
 from secret import password
 from extension import cache, mail , celery
 
