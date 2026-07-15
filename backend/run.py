@@ -2,7 +2,7 @@
 import os 
 import sys
 from flask import Flask
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager 
 from datetime import timedelta
 from flask_cors import CORS
 from celery.schedules import crontab

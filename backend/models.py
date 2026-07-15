@@ -98,7 +98,7 @@ class Application(db.Model):
     application_date = db.Column(db.DateTime,server_default=func.now())
     status = db.Column(db.String,nullable=False, default = "Pending")                                  # Selected | Reject | Shortlist | Pending
     updated_at = db.Column(db.DateTime, onupdate=func.now())
-    applied_at = db.Column(db.DateTime, server_default=func.now())
+    applied_at = db.Column(db.DateTime, server_default=func.now()) 
     feedback = db.Column(db.Text, nullable=True)
     interview_date = db.Column(db.DateTime)
     
