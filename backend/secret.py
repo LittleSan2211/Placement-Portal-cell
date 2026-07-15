@@ -1,4 +1,4 @@
-password = "12345"
+password = "1234"
 
 import os 
 PROJECT_ROOT = os.getcwd() 
