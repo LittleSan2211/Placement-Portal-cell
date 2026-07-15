@@ -5,4 +5,4 @@ from celery import Celery
 cache = Cache()
 mail = Mail()
 
-celery = Celery(__name__)
+celery = Celery(__name__) 

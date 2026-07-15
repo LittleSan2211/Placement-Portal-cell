@@ -6,7 +6,7 @@ from werkzeug.utils import secure_filename
 from models import JobPosition, Student, db, Application
 from extension import cache
 
-bp = Blueprint('student', __name__)
+bp = Blueprint('student', __name__) 
  
 def make_user_cache_key(*args, **kwargs):
     try:

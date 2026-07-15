@@ -5,7 +5,7 @@ from sqlalchemy.sql import func
 from datetime import datetime
 from models import db, Student, JobPosition, Company, Application 
 from task import export_applicants_csv_task 
-from extension import cache
+from extension import cache 
 
 
 bp = Blueprint("company", __name__)

@@ -270,7 +270,7 @@ def handleCompanyAction():
         company = Company.query.filter_by(id=company_id).first()
         if not company:
             return jsonify({'message': 'Company profile not found'}), 404
-
+ 
         # functionalities mapping
         if action_type == 'Approve':
             company.approval_status = 'APPROVED'
