@@ -1,19 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
 .admin {
     display: flex;
     min-height: 100vh;
-    background-color: #f5f7fb; /* Natural light grey-blue backdrop */
-    font-family: "Inter", sans-serif;
+    background-color: #f0f4f8; /* Soft subtle background */
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,0.03) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, hsla(225,39%,30%,0.03) 0, transparent 50%);
+    font-family: "Inter", system-ui, sans-serif;
 }
 
 /* ================= LEFT SIDEBAR ================= */
 .lun {
-    width: 257px;
+    width: 270px;
     min-height: 100vh;
-    background-color: white;
-    border-right: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(226, 232, 240, 0.8);
     position: fixed;
     left: 0;
     top: 0;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+    z-index: 110;
 }
 
 .lu-nav {
@@ -21,33 +30,36 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    padding: 28px 22px;
+    padding: 35px 25px;
     box-sizing: border-box;
 }
 
 /* Upper branding group */
 .lun-upper {
     text-align: left;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .lun-upper h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #1e3a8a;
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
     margin-bottom: 6px;
+    letter-spacing: -0.5px;
 }
 
 .lun-upper p {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 2px;
-    color: #6b7280;
-    font-weight: 600;
+    color: #64748b;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 /* Middle Layout Area */
 .lun-middle {
-    margin-top: 40px;
+    margin-top: 45px;
     flex: 1;
 }
 
@@ -55,7 +67,7 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     padding: 0;
     margin: 0;
 }
@@ -66,19 +78,19 @@
     margin: 0;
 }
 
-/* 🎯 UNIFORM LINK STRUCTURE (Har clickable element ko same framework de diya) */
+/* 🎯 UNIFORM LINK STRUCTURE */
 .link {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #4b5563; /* Premium balanced dark grey for light mode text */
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569; 
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-left: 4px solid transparent; 
     box-sizing: border-box;
 }
@@ -87,139 +99,172 @@
     font-size: 20px;
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
 .link span {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 /* Hover dynamic state across all options */
 .link:hover {
-    background-color: #eef2ff;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
     color: #4f46e5;
-    transform: translateX(4px);
+    transform: translateX(5px);
 }
 
-/* ACTIVE TABS GRAPHICS (Exact match with your image color state) */
+.link:hover i {
+    transform: scale(1.1);
+}
+
+/* ACTIVE TABS GRAPHICS */
 .link.router-link-exact-active,
 .link.router-link-active:not([href="#"]):not(.text-link) {
-    background: linear-gradient(135deg, #4f46e5, #2563eb) !important; /* Perfect natural blue fill */
+    background: linear-gradient(135deg, #4f46e5, #3b82f6) !important;
     color: #ffffff !important;
-    border-left: 4px solid #4f46e5;
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
-    font-weight: 600;
+    border-left: 4px solid #312e81;
+    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.25);
+    font-weight: 700;
 }
 
-/* 📥 BOTTOM NAVIGATION SECTION FIXED (Aligns seamlessly with upper tags) */
+/* 📥 BOTTOM NAVIGATION SECTION FIXED */
 .lun-bottom {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Clean tracking distribution space */
-    border-top: 1px solid #e5e7eb;
-    padding-top: 20px;
+    gap: 10px; 
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    padding-top: 25px;
 }
 
 /* Support and Settings now behave exactly like middle dashboard slots */
 .lun-bottom .link:hover {
-    background-color: #f3f4f6;
-    color: #111827;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    color: #0f172a;
 }
 
 /* Logout interaction rule specifications */
 .logout-clickable-btn {
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .logout-clickable-btn:hover {
-    background-color: #fef2f2 !important; 
-    color: #dc2626 !important; /* Crimson sharp warn look */
+    background: rgba(239, 68, 68, 0.1) !important; 
+    color: #dc2626 !important;
+    transform: translateX(5px);
 }
 
 /* ================= TOP NAVBAR ================= */
 .lut {
     position: fixed;
     top: 0;
-    left: 257px;
+    left: 270px;
     right: 0;
-    height: 65px;
-    background-color: white;
-    border-bottom: 1px solid #e5e7eb;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 40px;
+    padding: 0px 45px;
     z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .lut-img {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    align-items: center;
 }
 
 .lut-img p {
-    margin-top: 26px;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 1.1px;
-    background: #1e3a8a;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #1e293b, #475569);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .lut-img img {
-    height: 48px;
-    width: 80px;
+    height: 52px;
+    width: 85px;
     object-fit: contain;
-    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.lut-img img:hover {
+    transform: scale(1.05) rotate(2deg);
 }
 
 .lut-right {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .lutr-left {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    background-color: #eef2ff;
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
     display: flex;
     justify-content: center;
     align-items: center;
     color: #4f46e5;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.lutr-left:hover {
+    transform: scale(1.05);
 }
 
 .lutr-right {
-    margin-left: 40px;
+    margin-left: 0; /* Handled by gap */
 }
 
 .lutr-right h3 {
-    font-size: 13.5px;
-    color: #111827;
-    margin-bottom: 2px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
 }
 
 .lutr-right p {
-    font-size: 11px;
-    color: #6b7280;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
 }
 
 .lutr-am img {
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.lutr-am img:hover {
+    transform: scale(1.05);
 }
 
 /* ================= ROUTER VIEW SPACE ================= */
 .admin > div:last-child {
-    margin-left: 257px;
+    margin-left: 270px;
     margin-top: 80px;
-    width: calc(100% - 257px);
-    padding: 35px;
+    width: calc(100% - 270px);
+    padding: 40px;
     box-sizing: border-box;
 }

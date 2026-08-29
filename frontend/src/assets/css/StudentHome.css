@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
 /* ==================================================================
    MASTER DASHBOARD CORE SHELL
    ================================================================== */
@@ -5,7 +7,8 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  animation: sdFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: sdFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 /* ==================================================================
@@ -14,146 +17,171 @@
 .sd-metrics-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .sd-card-metric {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 24px 28px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sd-card-metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 .sd-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.sd-blue-tint { background: #eff6ff; color: #2563eb; }
-.sd-amber-tint { background: #fffbeb; color: #d97706; }
-.sd-green-tint { background: #dcfce7; color: #16a34a; }
+.sd-card-metric:hover .sd-icon-box {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.sd-blue-tint { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; }
+.sd-amber-tint { background: linear-gradient(135deg, #fffbeb, #fef3c7); color: #d97706; }
+.sd-green-tint { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #16a34a; }
 
 .sd-lbl-text {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.5px;
 }
 
 .sd-value-num {
-  font-size: 28px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
   font-weight: 800;
   color: #0f172a;
-  margin: 4px 0 0 0;
+  margin: 6px 0 0 0;
+  line-height: 1;
 }
 
 /* ==================================================================
-   PART 2: ACTIVE RECRUITMENT DRIVES (The Core Job Portal Vibe)
+   PART 2: ACTIVE RECRUITMENT DRIVES 
    ================================================================== */
 .sd-section-wrapper {
   background: transparent;
 }
 
 .sd-block-title {
-  font-size: 14px;
-  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
   color: #1e293b;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .sd-block-title i {
-  color: #3b82f6;
-  font-size: 16px;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
 }
 
 .sd-high-packages-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 /* Redesigned Job Card Wrapper */
 .sd-pkg-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 190px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 220px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
 }
 
 .sd-pkg-card:hover {
-  transform: translateY(-4px);
-  border-color: #bfdbfe;
-  box-shadow: 0 12px 20px -8px rgba(59, 130, 246, 0.12);
+  transform: translateY(-6px);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
 }
 
 .sd-pkg-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
 }
 
 /* Corporate Tag */
 .sd-company-badge {
-  background: #f1f5f9;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
   color: #475569;
-  padding: 6px 10px;
+  padding: 6px 12px;
   font-size: 12px;
   font-weight: 700;
-  border-radius: 8px;
-  letter-spacing: 0.02em;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
 }
 
 /* CTC Package Ring */
 .sd-pkg-amount {
-  color: #2563eb;
-  background: #f0f5ff;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 13px;
-  border: 1px solid #dbeafe;
+  color: #1d4ed8;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid rgba(191, 219, 254, 0.5);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.05);
 }
 
 /* Job Role Title Focus */
 .sd-role-txt {
-  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
   font-weight: 700;
   color: #0f172a;
-  margin: 14px 0 6px 0;
+  margin: 18px 0 8px 0;
   line-height: 1.3;
 }
 
 .sd-loc-txt {
   font-size: 13px;
   color: #64748b;
-  margin: 0 0 16px 0;
+  margin: 0 0 20px 0;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  font-weight: 500;
 }
 
 /* 🔥 THE JOB PORTAL ACTION BUTTON: APPLY NOW */
@@ -162,32 +190,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #3b82f6;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
   color: #ffffff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   width: 100%;
-  padding: 10px 0;
-  border-radius: 10px;
+  padding: 12px 0;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   margin-top: auto;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .sd-pkg-card:hover::after {
-  background: #2563eb;
+  background: linear-gradient(135deg, #4338ca, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
 }
 
 .sd-empty-box-span {
   grid-column: span 4;
   text-align: center;
   color: #94a3b8;
-  padding: 32px;
-  background: #ffffff;
-  border: 2px dashed #e2e8f0;
-  border-radius: 16px;
-  font-size: 14px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px dashed rgba(203, 213, 225, 0.8);
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 /* ==================================================================
@@ -201,42 +232,54 @@
 
 .sd-trends-table-card, 
 .sd-skills-panel-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 /* SCROLLABLE TRENDING MATRIX TABLE */
 .sd-table-scroll-wrapper {
-  max-height: 310px;
+  max-height: 350px;
   overflow-y: auto;
-  padding-right: 4px;
+  padding-right: 8px;
 }
 
 .sd-custom-trends-table {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
 }
 
 .sd-custom-trends-table th {
-  background: #f8fafc;
+  background: rgba(248, 250, 252, 0.95);
+  backdrop-filter: blur(8px);
   color: #475569;
   font-weight: 700;
-  padding: 12px;
+  padding: 16px;
   border-bottom: 2px solid #e2e8f0;
   text-align: left;
   position: sticky;
   top: 0;
   z-index: 5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
 }
 
 .sd-custom-trends-table td {
-  padding: 14px 12px;
-  border-bottom: 1px solid #f1f5f9;
-  color: #475569;
+  padding: 16px;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+  color: #334155;
+  transition: background-color 0.2s;
+}
+
+.sd-custom-trends-table tr:hover td {
+  background: rgba(248, 250, 252, 0.5);
 }
 
 .sd-bold-td {
@@ -248,57 +291,63 @@
 .sd-txt-right { text-align: right; }
 
 .sd-count-badge {
-  background: #eff6ff;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
   color: #2563eb;
-  padding: 3px 10px;
+  padding: 4px 12px;
   font-weight: 700;
-  border-radius: 100px;
+  border-radius: 12px;
   font-size: 12px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.05);
 }
 
 .sd-premium-ctc {
-  font-weight: 700;
-  color: #059669; /* Soft Professional Emerald Green */
+  font-weight: 800;
+  color: #059669; 
 }
 
 .sd-no-data-msg {
   text-align: center !important;
   color: #94a3b8;
-  padding: 48px !important;
+  padding: 60px !important;
+  font-weight: 500;
 }
 
 /* HOT SKILLS CLUSTER TAGS */
 .sd-panel-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: #64748b;
-  margin: -10px 0 20px 0;
-  line-height: 1.4;
+  margin: -10px 0 24px 0;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .sd-skills-tags-cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .sd-skill-pill-tag {
   background: #ffffff;
   color: #334155;
-  border: 1px solid #cbd5e1;
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 13px;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  transition: all 0.15s ease;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .sd-skill-pill-tag:hover {
-  border-color: #3b82f6;
-  background: #f0f5ff;
+  border-color: rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #f0f5ff, #e0e7ff);
   color: #2563eb;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.1);
 }
 
 .sd-skill-pill-tag i {
@@ -307,26 +356,35 @@
 
 .sd-empty-skills {
   color: #94a3b8;
-  font-size: 13px;
-  padding: 16px;
+  font-size: 14px;
+  padding: 20px;
+  font-weight: 500;
 }
 
 /* ==================================================================
    UTILITIES SYSTEM SCROLLBARS & ENTRANCE ANIMATION
    ================================================================== */
 .sd-table-scroll-wrapper::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
+}
+
+.sd-table-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .sd-table-scroll-wrapper::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(203, 213, 225, 0.6);
   border-radius: 10px;
+}
+
+.sd-table-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.8);
 }
 
 @keyframes sdFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px); 
+    transform: translateY(20px); 
   }
   to {
     opacity: 1;

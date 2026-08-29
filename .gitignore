@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+*.env
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Secrets
+secret.py

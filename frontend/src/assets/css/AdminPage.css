@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
 /* ==========================================================================
    MAIN CONTENT WRAPPER (.ad)
    ========================================================================== */
 .ad {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 8px;
-  background-color: #f8fafc; /* Milky White Variant */
+  gap: 30px;
+  padding: 20px;
+  background-color: transparent; 
   box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 /* ==========================================================================
@@ -20,81 +23,91 @@
 }
 
 .adu-left h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1e3a8a; /* Deep Navy Blue */
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a; 
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 .adu-left p {
-  font-size: 14px;
+  font-size: 15px;
   color: #64748b;
-  margin: 4px 0 0 0;
+  margin: 6px 0 0 0;
+  font-weight: 500;
 }
 
 .adu-right {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
 .adu-right button,
 .adu-right div p {
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin: 0;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
 .adu-right button {
-  background-color: #ffffff;
-  color: #2563eb;
-  border: 1px solid #bfdbfe;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  color: #4f46e5;
+  border: 1px solid rgba(191, 219, 254, 0.8);
 }
 
 .adu-right button:hover {
-  background-color: #f0f5ff;
-  border-color: #2563eb;
+  background: rgba(255, 255, 255, 1);
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.1);
 }
 
 .adu-right div p {
-  background-color: #2563eb;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
   color: #ffffff;
   border: none;
 }
 
 .adu-right div p:hover {
-  background-color: #1d4ed8;
+  background: linear-gradient(135deg, #4338ca, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.2);
 }
 
 /* ==========================================================================
    ROW 1 LAYOUT: METRIC CARDS GRID (.ad-middle) & TOP PARTNERS (.trp)
    ========================================================================== */
-/* Parde ke peeche dono ko ek line mein laane ke liye hum target karte hain */
 .ad-middle {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 Columns mesh to maintain height */
-  gap: 16px;
-  width: 65%; /* Grid ko 65% space diya */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  width: 65%; 
   float: left;
 }
 
 .trp {
-  width: 32%; /* Top partners ko side me 32% space diya */
+  width: 32%; 
   float: right;
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 24px;
   box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
-/* CSS hack to clear floats and make them align perfectly */
 .ad::after,
 .dashboard-top-row-clear {
   content: "";
@@ -102,15 +115,11 @@
   display: table;
 }
 
-/* Hack to wrap them inside a flex behavior without adding HTML wrappers */
 @media (min-width: 992px) {
   .ad {
     display: grid;
     grid-template-columns: 1fr;
   }
-
-  /* We handle structural wrapping via pseudo elements or re-ordering if needed, 
-       but standard floats/flex on direct children is safest: */
   .ad-middle {
     display: grid;
     width: auto;
@@ -119,241 +128,235 @@
   }
   .trp {
     position: absolute;
-    right: 24px;
+    right: 32px;
     width: 320px;
-    height: 396px;
-    margin-top: 102px;
+    height: 420px;
+    margin-top: 110px;
   }
 }
 
 /* ==========================================================================
-   METRIC CARDS STYLING (.adm-card, .card-top-row, .card-icon-box, .trend-tag)
+   METRIC CARDS STYLING 
    ========================================================================== */
 .adm-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .adm-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.05);
-  border-color: #bfdbfe;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(79, 70, 229, 0.08);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .card-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .card-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.student-icon {
-  background-color: #eff6ff;
-  color: #2563eb;
+.adm-card:hover .card-icon-box {
+  transform: scale(1.1) rotate(5deg);
 }
-.company-icon {
-  background-color: #ecfdf5;
-  color: #10b981;
-}
-.drive-icon {
-  background-color: #fff7ed;
-  color: #f97316;
-}
-.rate-icon {
-  background-color: #f5f3ff;
-  color: #8b5cf6;
-}
-.blacklist-icon {
-  background-color: #fef2f2;
-  color: #ef4444;
-}
-.pending-icon {
-  background-color: #fff1f2;
-  color: #f43f5e;
-}
+
+.student-icon { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; }
+.company-icon { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #10b981; }
+.drive-icon { background: linear-gradient(135deg, #fff7ed, #ffedd5); color: #f97316; }
+.rate-icon { background: linear-gradient(135deg, #f5f3ff, #ede9fe); color: #8b5cf6; }
+.blacklist-icon { background: linear-gradient(135deg, #fef2f2, #fee2e2); color: #ef4444; }
+.pending-icon { background: linear-gradient(135deg, #fff1f2, #ffe4e6); color: #f43f5e; }
 
 .trend-tag {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
   border-radius: 12px;
+  letter-spacing: 0.5px;
 }
 
-.green-tag {
-  background-color: #d1fae5;
-  color: #065f46;
-}
-.red-tag {
-  background-color: #fee2e2;
-  color: #991b1b;
-}
-.orange-tag {
-  background-color: #ffedd5;
-  color: #9a3412;
-}
-.blue-tag {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
+.green-tag { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #065f46; border: 1px solid rgba(16, 185, 129, 0.2); }
+.red-tag { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.2); }
+.orange-tag { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #9a3412; border: 1px solid rgba(249, 115, 22, 0.2); }
+.blue-tag { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0369a1; border: 1px solid rgba(14, 165, 233, 0.2); }
 
 .adm-card > span:nth-of-type(1),
 .card-title {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: #64748b;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .adm-card > span:nth-of-type(2),
 .card-value {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 4px 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 8px 0;
+  line-height: 1;
 }
 
 .adm-card > p,
 .card-sub {
-  font-size: 11px;
-  color: #94a3b8;
+  font-size: 13px;
+  color: #64748b;
   margin: 0;
+  font-weight: 500;
 }
 
 /* ==========================================================================
-   TOP RECRUITING PARTNERS CARD INTERNAL STYLES (.trp, .partner-list, .partner-card)
+   TOP RECRUITING PARTNERS CARD INTERNAL STYLES 
    ========================================================================== */
 .trp h3 {
-  margin: 0 0 12px 0;
-  font-size: 15px;
-  font-weight: 700;
-  color: #1e293b;
+  font-family: 'Outfit', sans-serif;
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
 }
 
 .partner-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .partner-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 12px;
-  background-color: #f8fafc;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
   transition: all 0.2s ease;
 }
 
 .partner-card:hover {
-  border-color: #bfdbfe;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-color: rgba(99, 102, 241, 0.3);
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
 }
 
 .partner-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .rank-badge {
-  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
   color: #94a3b8;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .company-avatar {
-  width: 32px;
-  height: 32px;
-  background-color: #dbeafe;
-  color: #1e40af;
-  font-weight: 700;
-  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  color: #4f46e5;
+  font-weight: 800;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.1);
 }
 
 .company-details h4 {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
   color: #1e293b;
-  font-weight: 600;
+  font-weight: 700;
 }
 .company-details p {
-  margin: 1px 0 0 0;
-  font-size: 11px;
+  margin: 2px 0 0 0;
+  font-size: 12px;
   color: #64748b;
+  font-weight: 500;
 }
 
 .package-badge {
-  background-color: #dcfce7;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
   color: #166534;
-  padding: 3px 6px;
-  border-radius: 6px;
-  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 800;
   font-size: 12px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 .partner-right p {
-  margin: 1px 0 0 0;
-  font-size: 10px;
+  margin: 4px 0 0 0;
+  font-size: 11px;
   color: #94a3b8;
   text-align: right;
+  font-weight: 500;
 }
 .no-data {
   text-align: center;
   color: #94a3b8;
-  padding: 16px;
-  font-size: 12px;
+  padding: 24px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* ==========================================================================
    ROW 2 LAYOUT: COMPACT TABLE (.adm-table) & RECENT ACTIVITY CARD (.adl-upper)
    ========================================================================== */
 @media (min-width: 992px) {
-  /* Table area layout shrinking */
   .adm-table {
-    margin-right: 360px; /* Right column space matching the layout above */
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 16px;
+    margin-right: 360px; 
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 24px;
     box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
   }
 
-  /* Transforming the Recent Activity block area dynamically into a side widget card */
   .adl-upper {
     position: absolute;
-    right: 24px;
+    right: 32px;
     width: 320px;
-    margin-top: 530px; /* Placed exactly under Top Partners card */
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 16px;
+    margin-top: 550px; 
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 24px;
     box-sizing: border-box;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   }
 }
 
@@ -361,95 +364,93 @@
    🔥 UNIFIED & ALIGNED RECENT REQUESTS TABLE
    ================================================================== */
 .adm-table {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
   padding: 24px;
   margin-top: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .adm-table table {
   width: 100%;
-  border-collapse: collapse;
-  text-align: left; /* 🔥 Strict left alignment for all headers and rows */
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left; 
 }
 
 /* TABLE HEADERS MATCH */
 .adm-table th {
   font-size: 13px;
   font-weight: 700;
-  color: #475569; /* Elegant charcoal grey headers */
+  color: #475569;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 14px 16px;
-  border-bottom: 2px solid #edf2f7;
+  letter-spacing: 0.5px;
+  padding: 16px 20px;
+  border-bottom: 2px solid rgba(226, 232, 240, 0.8);
+  background: rgba(248, 250, 252, 0.5);
 }
 
-/* TABLE ROWS CELLS MATCH (No more text running away!) */
+/* TABLE ROWS CELLS MATCH */
 .adm-table td {
   font-size: 14px;
   font-weight: 500;
-  color: #1e293b; /* Readable dark grey font text */
-  padding: 16px;
-  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b; 
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8);
   vertical-align: middle;
+  transition: background-color 0.2s;
 }
 
 /* HOVER FEEDBACK ROW MATRIX */
-.adm-table tbody tr:hover {
-  background-color: #f8fafc; /* Dynamic smooth highlight row on hover */
-  transition: background-color 0.15s ease;
+.adm-table tbody tr:hover td {
+  background: rgba(248, 250, 252, 0.8);
 }
 
 /* If you want to explicitly freeze widths to avoid any layout running away */
 .adm-table th:nth-child(1),
-.adm-table td:nth-child(1) {
-  width: 30%;
-} /* Company Name column */
+.adm-table td:nth-child(1) { width: 30%; } 
 .adm-table th:nth-child(2),
-.adm-table td:nth-child(2) {
-  width: 25%;
-} /* Industry column */
+.adm-table td:nth-child(2) { width: 25%; } 
 .adm-table th:nth-child(3),
-.adm-table td:nth-child(3) {
-  width: 25%;
-} /* Location column */
+.adm-table td:nth-child(3) { width: 25%; } 
 .adm-table th:nth-child(4),
-.adm-table td:nth-child(4) {
-  width: 20%;
-} /* Time column */
+.adm-table td:nth-child(4) { width: 20%; } 
+
 .time-col {
-  color: #2563eb;
-  font-weight: 500;
+  color: #4f46e5;
+  font-weight: 600;
 }
+
 .no-data-td {
   text-align: center;
   color: #94a3b8;
-  padding: 16px !important;
+  padding: 40px !important;
+  font-weight: 500;
 }
 
 /* Custom internal style injection for Recent Activity card look */
 .adl-upper h3 {
-  margin: 0 0 12px 0;
-  font-size: 15px;
-  font-weight: 700;
-  color: #1e293b;
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 8px;
+  font-family: 'Outfit', sans-serif;
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+  padding-bottom: 12px;
 }
 
-/* This creates an automatic visual box for later updates without touching HTML structure */
 .adl-upper::after {
   content: "Activity log widget space reserved for later mapping.";
   display: block;
-  border: 2px dashed #cbd5e1;
-  background-color: #f8fafc;
-  border-radius: 10px;
-  padding: 24px 12px;
+  border: 2px dashed rgba(203, 213, 225, 0.8);
+  background: rgba(248, 250, 252, 0.5);
+  border-radius: 12px;
+  padding: 30px 20px;
   text-align: center;
   color: #64748b;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  margin-top: 12px;
+  margin-top: 16px;
 }
