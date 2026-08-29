@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ==================================================================
+   CORE MANAGEMENT DESK WORKSPACE
+   ================================================================== */
+.ah-workspace-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: calc(100vh - 120px);
+  font-family: 'Inter', system-ui, sans-serif;
+  animation: ahFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==================================================================
+   TOP DECK: INLINE METRICS TYPOGRAPHY
+   ================================================================== */
+.ah-metrics-deck {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 16px 28px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.ah-count-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  padding: 4px 12px;
+  border-radius: 8px;
+  margin-left: 6px;
+}
+
+.ah-success-color {
+  color: #15803d !important;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0) !important;
+}
+
+.ah-metric-divider {
+  color: #cbd5e1;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+/* ==================================================================
+   SPLIT LAYOUT CONTROLS
+   ================================================================== */
+.ah-split-workspace {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 28px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* LEFT STREAM PANE (65%) */
+.ah-left-stream-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.ah-job-summary-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-left: 6px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ah-job-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.ah-border-selected { border-left-color: #10b981 !important; }
+.ah-border-shortlist { border-left-color: #f59e0b !important; }
+.ah-border-reject { border-left-color: #ef4444 !important; }
+
+.ah-active-selected-card {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06) !important;
+  border-top-color: rgba(99, 102, 241, 0.3);
+  border-right-color: rgba(99, 102, 241, 0.3);
+  border-bottom-color: rgba(99, 102, 241, 0.3);
+  transform: scale(1.01);
+}
+
+.ah-card-top-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ah-card-company {
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ah-card-package {
+  color: #1e3a8a;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.ah-card-role-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.ah-card-meta-loc {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.ah-card-type-badge {
+  font-size: 12px;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.ah-card-status-footer {
+  display: flex;
+  margin-top: 6px;
+}
+.ah-badge-status {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.ah-bg-success { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d; border: 1px solid rgba(34, 197, 94, 0.2); }
+.ah-bg-warning { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #b45309; border: 1px solid rgba(245, 158, 11, 0.2); }
+.ah-bg-danger { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #b91c1c; border: 1px solid rgba(239, 68, 68, 0.2); }
+.ah-bg-muted { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); color: #475569; border: 1px solid rgba(148, 163, 184, 0.2); }
+
+/* RIGHT PANEL SYSTEM (35%) */
+.ah-right-details-pane {
+  overflow: hidden;
+}
+
+.ah-sticky-detail-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.ah-detail-header {
+  padding: 28px 28px 20px 28px;
+}
+.ah-detail-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+.ah-detail-company-sub {
+  font-size: 16px;
+  font-weight: 700;
+  color: #475569;
+  margin: 0 0 8px 0;
+}
+.ah-detail-location-sub {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+.ah-divider-line {
+  border: 0;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  margin: 0;
+}
+
+.ah-detail-scroll-body {
+  padding: 28px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ah-detail-section h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+}
+
+.ah-timeline-box,
+.ah-package-box {
+  background: rgba(248, 250, 252, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+.ah-timeline-box p {
+  margin: 0;
+}
+
+.ah-status-message-box {
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+}
+.ah-status-message-box h6 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+.ah-status-message-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.ah-msg-success { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: rgba(134, 239, 172, 0.5); color: #166534; }
+.ah-msg-warning { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-color: rgba(253, 230, 138, 0.5); color: #92400e; }
+.ah-msg-danger { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-color: rgba(252, 165, 165, 0.5); color: #991b1b; }
+.ah-msg-muted { background: linear-gradient(135deg, #f8fafc, #f1f5f9); border-color: rgba(203, 213, 225, 0.5); color: #475569; }
+
+.ah-detail-empty-placeholder {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px dashed rgba(203, 213, 225, 0.8);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+.ah-placeholder-icon {
+  font-size: 48px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+.ah-detail-empty-placeholder h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #475569;
+  margin: 0 0 8px 0;
+}
+.ah-detail-empty-placeholder p {
+  font-size: 14px;
+  color: #94a3b8;
+  max-width: 280px;
+  margin: 0;
+  line-height: 1.5;
+}
+.ah-no-results-box {
+  text-align: center;
+  color: #94a3b8;
+  padding: 60px 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* 🔥 FLOATING TOAST STYLES: TOP-RIGHT CORNER */
+.ah-floating-error-toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-left: 6px solid #ef4444;
+  box-shadow: 0 15px 35px -5px rgba(239, 68, 68, 0.15),
+    0 10px 15px -6px rgba(0, 0, 0, 0.05);
+  padding: 20px 24px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 420px;
+  animation: ahToastSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.ah-floating-error-toast i {
+  color: #ef4444;
+  font-size: 24px;
+  margin-top: 2px;
+}
+.ah-toast-content strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+.ah-toast-content p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@keyframes ahToastSlideIn {
+  from { transform: translateX(120%) scale(0.9); opacity: 0; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+@keyframes ahFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ah-left-stream-pane::-webkit-scrollbar,
+.ah-detail-scroll-body::-webkit-scrollbar {
+  width: 6px;
+}
+.ah-left-stream-pane::-webkit-scrollbar-track,
+.ah-detail-scroll-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ah-left-stream-pane::-webkit-scrollbar-thumb,
+.ah-detail-scroll-body::-webkit-scrollbar-thumb {
+  background: rgba(203, 213, 225, 0.6);
+  border-radius: 10px;
+}
+.ah-left-stream-pane::-webkit-scrollbar-thumb:hover,
+.ah-detail-scroll-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.8);
+}

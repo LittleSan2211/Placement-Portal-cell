@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   COMPANY DASHBOARD COMPONENT - CORE STYLES
+   ========================================================================== */
+
+/* Main Page Container */
+.company-home-wrapper {
+    padding: 32px;
+    background: transparent;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    animation: chFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Global Section Header Rules */
+.ch-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+/* Dynamic Network Error Alert Bar */
+.ch-error-message-bar {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border-left: 4px solid #ef4444;
+    border-radius: 12px;
+    color: #dc2626;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.05);
+}
+
+/* ==========================================================================
+   1. TOP METRICS LAYER (GRID PATTERN)
+   ========================================================================== */
+.ch-metrics-grid-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.ch-metric-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.ch-metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Premium Border Effect for Conversion Card */
+.ch-purple-border-card {
+    border-left: 4px solid #8b5cf6;
+}
+
+/* Icon Wrappers with Dynamic Color Profiles */
+.ch-card-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.ch-metric-card:hover .ch-card-icon-wrap {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.ch-icon-blue { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; }
+.ch-icon-green { background: linear-gradient(135deg, #ecfdf5, #d1fae5); color: #10b981; }
+.ch-icon-orange { background: linear-gradient(135deg, #fff7ed, #ffedd5); color: #ea580c; }
+.ch-icon-purple { background: linear-gradient(135deg, #f5f3ff, #ede9fe); color: #7c3aed; }
+
+/* Metrics Typography */
+.ch-card-meta-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.ch-card-main-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1;
+}
+
+.ch-purple-value-text {
+    color: #7c3aed;
+}
+
+.ch-card-hint-text {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   2. MIDDLE CARDS LAYER (RECENT DRIVES)
+   ========================================================================== */
+.ch-drives-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.ch-drives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.ch-drive-selector-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.ch-drive-selector-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transform: translateY(-3px);
+}
+
+.ch-card-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+}
+
+/* Clean Badges for Job Status */
+.ch-role-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.ch-tag-ongoing { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d; border: 1px solid rgba(34, 197, 94, 0.2); }
+.ch-tag-closed { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #b91c1c; border: 1px solid rgba(239, 68, 68, 0.2); }
+
+.ch-drive-title-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.ch-drive-deadline-text {
+    font-size: 14px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.ch-drive-card-footer {
+    border-top: 1px dashed rgba(203, 213, 225, 0.8);
+    padding-top: 16px;
+    font-size: 14px;
+    color: #475569;
+    display: flex;
+    align-items: center;
+}
+
+.ch-drive-applicant-count-text strong {
+    color: #0f172a;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Fallback Card Style */
+.ch-no-drives-card {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed rgba(203, 213, 225, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. BOTTOM SECTION (ROLE ANALYTICS TABLE)
+   ========================================================================== */
+.ch-analytics-table-section {
+    margin-top: 32px;
+}
+
+.ch-table-responsive-wrapper {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    overflow-x: auto;
+    margin-top: 16px;
+}
+
+.ch-analytics-data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Table Header Matrix */
+.ch-analytics-data-table thead {
+    background: rgba(248, 250, 252, 0.8);
+}
+
+.ch-analytics-data-table th {
+    padding: 16px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Table Body Matrix */
+.ch-analytics-data-table tbody {
+    font-size: 14px;
+    color: #334155;
+}
+
+.ch-table-data-row {
+    transition: background-color 0.2s ease;
+}
+
+.ch-table-data-row:hover td {
+    background: rgba(248, 250, 252, 0.5);
+}
+
+.ch-role-name-cell {
+    padding: 16px 20px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Table Action Status Badges */
+.ch-status-badge {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.ch-status-ongoing { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d; border: 1px solid rgba(34, 197, 94, 0.2); }
+.ch-status-closed { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #b91c1c; border: 1px solid rgba(239, 68, 68, 0.2); }
+
+/* Column Alignments & Numerical Highlights */
+.ch-text-center {
+    text-align: center;
+}
+
+.ch-analytics-data-table td {
+    padding: 16px 20px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(241, 245, 249, 0.8);
+}
+
+.ch-analytics-data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.ch-count-blue { color: #4f46e5; font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 16px; }
+.ch-count-orange { color: #ea580c; font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 16px; }
+.ch-count-green { color: #16a34a; font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 16px; }
+
+.ch-skills-cell {
+    color: #475569;
+    font-size: 14px;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.ch-empty-table-cell {
+    padding: 40px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+@keyframes chFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

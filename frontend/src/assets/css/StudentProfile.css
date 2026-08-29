@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ==================================================================
+   🔥 CANDIDATE PORTAL CORE PROFILE CANVAS (MAIN WRAPPER)
+   ================================================================== */
+.stu-prof-container {
+  padding: 40px; 
+  background-color: transparent; /* Relying on main layout background */
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+  animation: stuFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* HEADER MANAGEMENT ZONE */
+.stu-prof-header-zone {
+  text-align: left;
+  margin-bottom: 32px;
+  padding-left: 4px;
+}
+
+.stu-prof-header-zone h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.stu-prof-header-zone p {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==================================================================
+   🔥 THE RIGID ROW GRID SPLIT 
+   ================================================================== */
+.stu-prof-grid-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; 
+  width: 100%;
+  align-items: start; 
+  box-sizing: border-box;
+}
+
+/* LEFT CARD ELEMENT CONTAINER BLOCK */
+.stu-prof-grid-layout > .stu-prof-card-block:first-of-type {
+  flex: 1.1; 
+  min-width: 0; 
+}
+
+/* RIGHT CARD ELEMENT CONTAINER BLOCK */
+.stu-prof-grid-layout > .stu-prof-card-block:last-of-type {
+  flex: 0.9; 
+  min-width: 0;
+}
+
+/* ==================================================================
+   UNIFIED SOFTWARE ENTERPRISE CARD CONTAINER
+   ================================================================== */
+.stu-prof-card-block {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 32px; 
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.stu-prof-card-block:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.stu-prof-card-block h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  border-bottom: 2px solid rgba(241, 245, 249, 0.8);
+  padding-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* FLEXIBLE COLUMN COMPACT ROWS */
+.stu-prof-row-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.stu-prof-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stu-prof-input-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  text-align: left;
+}
+
+/* PREMIUM UNIFIED DATA INPUT FIELDS */
+.stu-prof-input-group input,
+.stu-prof-input-group select,
+.stu-prof-input-group textarea {
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #0f172a;
+  background: rgba(248, 250, 252, 0.5);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.stu-prof-input-group input:focus,
+.stu-prof-input-group select:focus,
+.stu-prof-input-group textarea:focus {
+  border-color: #4f46e5;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* ==================================================================
+   DRAG-DROP AND FILE INPUT DESIGN
+   ================================================================== */
+.stu-prof-upload-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stu-prof-upload-zone label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  text-align: left;
+}
+
+.stu-prof-file-input-wrapper {
+  border: 2px dashed rgba(203, 213, 225, 0.8);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  background: rgba(248, 250, 252, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stu-prof-file-input-wrapper:hover {
+  background: #ffffff;
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.05);
+}
+
+.stu-prof-file-input-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.stu-prof-file-input-wrapper i {
+  font-size: 36px;
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.stu-prof-file-input-wrapper:hover i {
+  color: #4f46e5;
+}
+
+.stu-prof-file-input-wrapper p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 12px 0 0 0;
+  font-weight: 500;
+}
+
+/* WARNING AND EXISTENCE RESUME BADGES */
+.stu-prof-resume-badge-status {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid rgba(253, 230, 138, 0.5);
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #92400e;
+  font-weight: 500;
+}
+
+.stu-prof-resume-badge-status a {
+  font-weight: 700;
+  color: #b45309;
+  text-decoration: none;
+}
+
+.stu-prof-resume-badge-status a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================================
+   ACTION CONTROLLERS & ALERT NOTIFICATIONS
+   ================================================================== */
+.stu-prof-save-btn {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.stu-prof-save-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4338ca, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.stu-prof-save-btn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* TOAST PANELS FEEDBACK */
+.stu-prof-success-toast {
+  font-size: 14px;
+  background: linear-gradient(135deg, #ecfdf5, #dcfce7);
+  border: 1px solid rgba(167, 243, 208, 0.5);
+  color: #065f46;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  animation: stuFadeIn 0.3s ease;
+}
+
+.stu-prof-error-toast {
+  font-size: 14px;
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border: 1px solid rgba(254, 202, 167, 0.5);
+  color: #991b1b;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  animation: stuFadeIn 0.3s ease;
+}
+
+/* ROTATION SPIN LOADER */
+.stu-prof-spin {
+  animation: stuSpin 1s linear infinite;
+} 
+
+@keyframes stuSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes stuFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
